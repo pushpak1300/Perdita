@@ -52,12 +52,12 @@
                     <a href="#"
                        v-if="$page.props.auth.user === null "
                        class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-gray-600 hover:bg-gray-700">
-                        Log in
+                        Login
                     </a>
                     <a :href="route('logout')"
                        v-else
                        class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-gray-600 hover:bg-gray-700">
-                        Log out
+                        Logout
                     </a>
                 </div>
             </nav>
@@ -110,7 +110,7 @@
                                 <a href="#"
                                    class="block w-full px-5 py-3 text-center font-medium text-indigo-600 bg-gray-50 hover:bg-gray-100"
                                    role="menuitem">
-                                    Log in
+                                    Login
                                 </a>
                             </div>
                         </div>
@@ -168,12 +168,13 @@
                             </div>
                         </div>
                         <div class="mt-16 sm:mt-24 lg:mt-0 lg:col-span-6">
-                            <div class="bg-white sm:max-w-md sm:w-full sm:mx-auto sm:rounded-lg sm:overflow-hidden">
+                            <div v-if="$page.props.auth.user === null " class="bg-white sm:max-w-md sm:w-full sm:mx-auto sm:rounded-lg sm:overflow-hidden">
                                 <div class="px-4 py-8 sm:px-10">
-
-
                                     <div class="mt-6">
                                         <div>
+                                            <h4 class="text-base mb-4 text-gray-600 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
+                                                Log in, to gain quick access to our portal
+                                            </h4>
                                             <a type="submit"
                                                :href="route('google.redirect')"
                                                class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
@@ -194,6 +195,25 @@
                                         href="#" class="font-medium text-gray-900 hover:underline">Data Policy</a> and
                                         <a href="#" class="font-medium text-gray-900 hover:underline">Cookies Policy</a>.
                                     </p>
+                                </div>
+                            </div>
+                            <div v-else  class="bg-white sm:max-w-md sm:w-full sm:mx-auto sm:rounded-lg sm:overflow-hidden">
+                                <div class="px-4 py-8 sm:px-10">
+                                    <div class="mt-6">
+                                        <div>
+                                            <h4 class="text-base mb-4 text-gray-600 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
+                                                Hello,  {{ $page.props.auth.user.name }}
+                                            </h4>
+                                            <h5 class="text-base mb-4 text-gray-500 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
+                                                We are happy to see you again, want to help someone out?
+                                            </h5>
+                                            <a
+                                               :href="route('google.redirect')"
+                                               class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                                Go to Home
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

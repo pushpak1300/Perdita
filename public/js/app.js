@@ -16621,7 +16621,7 @@ var _hoisted_21 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(
   href: "#",
   "class": "block w-full px-5 py-3 text-center font-medium text-indigo-600 bg-gray-50 hover:bg-gray-100",
   role: "menuitem"
-}, " Log in ")])], -1
+}, " Login ")])], -1
 /* HOISTED */
 );
 
@@ -16710,6 +16710,7 @@ var _hoisted_26 = {
   "class": "mt-16 sm:mt-24 lg:mt-0 lg:col-span-6"
 };
 var _hoisted_27 = {
+  key: 0,
   "class": "bg-white sm:max-w-md sm:w-full sm:mx-auto sm:rounded-lg sm:overflow-hidden"
 };
 var _hoisted_28 = {
@@ -16719,9 +16720,15 @@ var _hoisted_29 = {
   "class": "mt-6"
 };
 
-var _hoisted_30 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Sign in with Google ");
+var _hoisted_30 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h4", {
+  "class": "text-base mb-4 text-gray-600 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl"
+}, " Log in, to gain quick access to our portal ", -1
+/* HOISTED */
+);
 
-var _hoisted_31 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", {
+var _hoisted_31 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Sign in with Google ");
+
+var _hoisted_32 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", {
   "class": "ml-2 w-5 h-5",
   fill: "currentColor",
   viewBox: "0 0 20 20",
@@ -16734,7 +16741,27 @@ var _hoisted_31 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(
 /* HOISTED */
 );
 
-var _hoisted_32 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"px-4 py-6 bg-gray-50 border-t-2 border-gray-200 sm:px-10\" data-v-0ec91988><p class=\"text-xs leading-5 text-gray-500\" data-v-0ec91988>By signing up, you agree to our <a href=\"#\" class=\"font-medium text-gray-900 hover:underline\" data-v-0ec91988>Terms</a>, <a href=\"#\" class=\"font-medium text-gray-900 hover:underline\" data-v-0ec91988>Data Policy</a> and <a href=\"#\" class=\"font-medium text-gray-900 hover:underline\" data-v-0ec91988>Cookies Policy</a>. </p></div>", 1);
+var _hoisted_33 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"px-4 py-6 bg-gray-50 border-t-2 border-gray-200 sm:px-10\" data-v-0ec91988><p class=\"text-xs leading-5 text-gray-500\" data-v-0ec91988>By signing up, you agree to our <a href=\"#\" class=\"font-medium text-gray-900 hover:underline\" data-v-0ec91988>Terms</a>, <a href=\"#\" class=\"font-medium text-gray-900 hover:underline\" data-v-0ec91988>Data Policy</a> and <a href=\"#\" class=\"font-medium text-gray-900 hover:underline\" data-v-0ec91988>Cookies Policy</a>. </p></div>", 1);
+
+var _hoisted_34 = {
+  key: 1,
+  "class": "bg-white sm:max-w-md sm:w-full sm:mx-auto sm:rounded-lg sm:overflow-hidden"
+};
+var _hoisted_35 = {
+  "class": "px-4 py-8 sm:px-10"
+};
+var _hoisted_36 = {
+  "class": "mt-6"
+};
+var _hoisted_37 = {
+  "class": "text-base mb-4 text-gray-600 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl"
+};
+
+var _hoisted_38 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h5", {
+  "class": "text-base mb-4 text-gray-500 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl"
+}, " We are happy to see you again, want to help someone out? ", -1
+/* HOISTED */
+);
 
 (0,vue__WEBPACK_IMPORTED_MODULE_0__.popScopeId)();
 
@@ -16750,11 +16777,11 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
     "aria-expanded": $data.open
   }, [_hoisted_9, _hoisted_10], 8
   /* PROPS */
-  , ["aria-expanded"])])]), _hoisted_11]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_12, [_ctx.$page.props.auth.user === null ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("a", _hoisted_13, " Log in ")) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("a", {
+  , ["aria-expanded"])])]), _hoisted_11]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_12, [_ctx.$page.props.auth.user === null ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("a", _hoisted_13, " Login ")) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("a", {
     key: 1,
     href: _ctx.route('logout'),
     "class": "inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-gray-600 hover:bg-gray-700"
-  }, " Log out ", 8
+  }, " Logout ", 8
   /* PROPS */
   , ["href"]))])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(vue__WEBPACK_IMPORTED_MODULE_0__.Transition, {
     "enter-active-class": "duration-150 ease-out",
@@ -16776,13 +16803,20 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
     _: 1
     /* STABLE */
 
-  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("main", _hoisted_22, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_23, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_24, [_hoisted_25, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_26, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_27, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_28, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_29, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
+  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("main", _hoisted_22, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_23, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_24, [_hoisted_25, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_26, [_ctx.$page.props.auth.user === null ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_27, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_28, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_29, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [_hoisted_30, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
     type: "submit",
     href: _ctx.route('google.redirect'),
     "class": "w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-  }, [_hoisted_30, _hoisted_31], 8
+  }, [_hoisted_31, _hoisted_32], 8
   /* PROPS */
-  , ["href"])])])]), _hoisted_32])])])])])])]);
+  , ["href"])])])]), _hoisted_33])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_34, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_35, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_36, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h4", _hoisted_37, " Hello, " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.$page.props.auth.user.name), 1
+  /* TEXT */
+  ), _hoisted_38, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
+    href: _ctx.route('google.redirect'),
+    "class": "w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+  }, " Go to Home ", 8
+  /* PROPS */
+  , ["href"])])])])]))])])])])])]);
 });
 
 /***/ }),
