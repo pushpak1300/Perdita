@@ -33,4 +33,4 @@ Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard'
 Route::get('/profile', [HomeController::class, 'profile'])->name('profile');
 
 //Items
-Route::get('/items/create', [ItemController::class,'create'])->name('post.create');
+Route::get('/items/create', [ItemController::class,'create'])->name('items.create');

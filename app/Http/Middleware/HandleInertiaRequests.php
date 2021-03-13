@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\Category;
 use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -49,6 +50,9 @@ class HandleInertiaRequests extends Middleware
                     'success' => Session::get('success'),
                     'error' => Session::get('error'),
                 ];
+            },
+             'categories' => function () {
+                return Category::all();
             },
         ]);
     }

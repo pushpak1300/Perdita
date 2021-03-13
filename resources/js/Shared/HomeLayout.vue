@@ -81,20 +81,22 @@
                                          class="origin-top-right absolute z-10 right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 py-1"
                                          role="menu" aria-orientation="vertical" aria-labelledby="user-menu">
 
-                                        <a :href="route('profile')" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100"
+                                        <a :href="route('profile')"
+                                           class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100"
                                            role="menuitem">Your Profile</a>
 
-                                        <a :href="route('logout')" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100"
+                                        <a :href="route('logout')"
+                                           class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100"
                                            role="menuitem">Logout</a>
 
                                     </div>
                                 </transition>
                             </div>
 
-                            <a href="#"
-                               class="ml-6 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                                New Post
-                            </a>
+                            <inertia-link :href="route('items.create')"
+                                          class="ml-6 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                Add lost/Found Item
+                            </inertia-link>
                         </div>
                     </div>
                 </div>
