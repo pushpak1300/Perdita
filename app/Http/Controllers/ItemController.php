@@ -26,7 +26,7 @@ class ItemController extends Controller
 
     public function show(Item $item)
     {
-        //
+        return Inertia::render('Items/Show');
     }
 
     public function edit(Item $item)

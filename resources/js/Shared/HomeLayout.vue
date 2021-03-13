@@ -95,7 +95,7 @@
 
                             <inertia-link :href="route('items.create')"
                                           class="ml-6 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                                Add lost/Found Item
+                                Add Item
                             </inertia-link>
                         </div>
                     </div>
@@ -105,14 +105,14 @@
                      aria-label="Global">
                     <div class="max-w-3xl mx-auto px-2 pt-2 pb-3 space-y-1 sm:px-4">
 
-                        <a :href="route('home')" aria-current="page"
-                           class="bg-gray-100 text-gray-900 block rounded-md py-2 px-3 text-base font-medium text-gray-900">Home</a>
+                        <inertia-link :href="route('home')" aria-current="page"
+                           class="bg-gray-100 text-gray-900 block rounded-md py-2 px-3 text-base font-medium text-gray-900">Home</inertia-link>
 
-                        <a :href="route('dashboard')" aria-current="false"
-                           class="hover:bg-gray-50 block rounded-md py-2 px-3 text-base font-medium text-gray-900">Dashboard</a>
+                        <inertia-link :href="route('dashboard')" aria-current="false"
+                           class="hover:bg-gray-50 block rounded-md py-2 px-3 text-base font-medium text-gray-900">Dashboard</inertia-link>
 
-                        <a :href="route('profile')" aria-current="false"
-                           class="hover:bg-gray-50 block rounded-md py-2 px-3 text-base font-medium text-gray-900">Profile</a>
+                        <inertia-link :href="route('profile')" aria-current="false"
+                           class="hover:bg-gray-50 block rounded-md py-2 px-3 text-base font-medium text-gray-900">Profile</inertia-link>
 
                     </div>
                     <div class="border-t border-gray-200 pt-4 pb-3">
@@ -157,7 +157,7 @@
                         <nav aria-label="Sidebar" class="sticky top-4 divide-y divide-gray-300">
                             <div class="pb-8 space-y-1">
 
-                                <a :href="route('home')"
+                                <inertia-link :href="route('home')"
                                    class="bg-gray-200 text-gray-900 group flex items-center px-3 py-2 text-sm font-medium rounded-md"
                                    aria-current="page">
                                     <svg class="text-gray-500 flex-shrink-0 -ml-1 mr-3 h-6 w-6"
@@ -169,9 +169,9 @@
                                     <span class="truncate">
                       Home
                     </span>
-                                </a>
+                                </inertia-link>
 
-                                <a :href="route('dashboard')"
+                                <inertia-link :href="route('dashboard')"
                                    class="text-gray-600 hover:bg-gray-50 group flex items-center px-3 py-2 text-sm font-medium rounded-md"
                                    aria-current="false">
                                     <svg
@@ -186,9 +186,9 @@
                                     <span class="truncate">
                       Dashboard
                     </span>
-                                </a>
+                                </inertia-link>
 
-                                <a :href="route('profile')"
+                                <inertia-link :href="route('profile')"
                                    class="text-gray-600 hover:bg-gray-50 group flex items-center px-3 py-2 text-sm font-medium rounded-md"
                                    aria-current="false">
                                     <svg
@@ -201,7 +201,7 @@
                                     <span class="truncate">
                       Profile
                     </span>
-                                </a>
+                                </inertia-link>
 
 
                             </div>
