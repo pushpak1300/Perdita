@@ -2,7 +2,7 @@
     <div class="relative bg-gray-800 overflow-hidden">
         <div class="hidden sm:block sm:absolute sm:inset-0" aria-hidden="true">
             <svg
-                class="absolute bottom-0 right-0 transform translate-x-1/2 mb-48 text-gray-700 lg:top-0 lg:mt-28 lg:mb-0 xl:transform-none xl:translate-x-0"
+                class="absolute bottom-0 right-0 transform translate-x-1/2 mb-4 text-gray-700 lg:top-0 lg:mt-28 lg:mb-0 xl:transform-none xl:translate-x-0"
                 width="364" height="384" viewBox="0 0 364 384" fill="none">
                 <defs>
                     <pattern id="eab71dd9-9d7a-47bd-8044-256344ee00d0" x="0" y="0" width="20" height="20"
@@ -13,7 +13,7 @@
                 <rect width="364" height="384" fill="url(#eab71dd9-9d7a-47bd-8044-256344ee00d0)"></rect>
             </svg>
         </div>
-        <div class="relative pt-6 pb-16 sm:pb-24">
+        <div class="relative pt-6 pb-8 sm:pb-12">
             <nav class="relative max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6" aria-label="Global">
                 <div class="flex items-center flex-1">
                     <div class="flex items-center justify-between w-full md:w-auto">
@@ -22,43 +22,10 @@
                             <img class="h-8 w-auto sm:h-10"
                                  src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg" alt="">
                         </a>
-                        <div class="-mr-2 flex items-center md:hidden">
-                            <button @click="open = true" type="button"
-                                    class="bg-gray-800 rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:bg-gray-700 focus:outline-none focus:ring-2 focus-ring-inset focus:ring-white"
-                                    id="main-menu" aria-haspopup="true" :aria-expanded="open">
-                                <span class="sr-only">Open main menu</span>
-                                <svg class="h-6 w-6"
-                                     xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                     stroke="currentColor" :aria-hidden="true">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                          d="M4 6h16M4 12h16M4 18h16"></path>
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="hidden space-x-10 md:flex md:ml-10">
-
-                        <a href="#" class="font-medium text-white hover:text-gray-300">Product</a>
-
-                        <a href="#" class="font-medium text-white hover:text-gray-300">Features</a>
-
-                        <a href="#" class="font-medium text-white hover:text-gray-300">Marketplace</a>
-
-                        <a href="#" class="font-medium text-white hover:text-gray-300">Company</a>
-
                     </div>
                 </div>
                 <div class="hidden md:flex">
-                    <a href="#"
-                       v-if="$page.props.auth.user === null "
-                       class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-gray-600 hover:bg-gray-700">
-                        Login
-                    </a>
-                    <a :href="route('logout')"
-                       v-else
-                       class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-gray-600 hover:bg-gray-700">
-                        Logout
-                    </a>
+                    
                 </div>
             </nav>
 
@@ -86,39 +53,11 @@
                                 </button>
                             </div>
                         </div>
-                        <div role="menu" aria-orientation="vertical" aria-labelledby="main-menu">
-                            <div class="px-2 pt-2 pb-3 space-y-1" role="none">
-
-                                <a href="#"
-                                   class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
-                                   role="menuitem">Product</a>
-
-                                <a href="#"
-                                   class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
-                                   role="menuitem">Features</a>
-
-                                <a href="#"
-                                   class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
-                                   role="menuitem">Marketplace</a>
-
-                                <a href="#"
-                                   class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
-                                   role="menuitem">Company</a>
-
-                            </div>
-                            <div role="none">
-                                <a href="#"
-                                   class="block w-full px-5 py-3 text-center font-medium text-indigo-600 bg-gray-50 hover:bg-gray-100"
-                                   role="menuitem">
-                                    Login
-                                </a>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </transition>
 
-            <main class="mt-16 sm:mt-24">
+            <main class="mt-10 sm:mt-24">
                 <div class="mx-auto max-w-7xl">
                     <div class="lg:grid lg:grid-cols-12 lg:gap-8">
                         <div
@@ -167,7 +106,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="mt-16 sm:mt-24 lg:mt-0 lg:col-span-6">
+                        <div class="mt-16 sm:mt-24 lg:col-span-6">
                             <div v-if="$page.props.auth.user === null " class="bg-white sm:max-w-md sm:w-full sm:mx-auto sm:rounded-lg sm:overflow-hidden">
                                 <div class="px-4 py-8 sm:px-10">
                                     <div class="mt-6">
