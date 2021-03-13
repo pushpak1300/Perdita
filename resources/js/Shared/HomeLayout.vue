@@ -8,9 +8,7 @@
                         <div class="flex md:absolute md:left-0 md:inset-y-0 lg:static xl:col-span-2">
                             <div class="flex-shrink-0 flex items-center">
                                 <a href="#">
-                                    <img class="block h-8 w-auto"
-                                         src="https://tailwindui.com/img/logos/workflow-mark.svg?color=indigo&amp;shade=500"
-                                         alt="Workflow">
+                                    <logo class="block h-8 w-auto text-indigo-500"></logo>
                                 </a>
                             </div>
                         </div>
@@ -310,7 +308,9 @@
                             </div>
                         </nav>
                     </div>
-                    <slot/>
+                    <main class="lg:col-span-9 xl:col-span-6">
+                        <slot/>
+                    </main>
                 </div>
             </div>
         </div>
@@ -320,6 +320,7 @@
 <script>
 export default {
     name: "HomeLayout",
+    components: ['Logo'],
     data() {
         return {
             open: false

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ItemController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -31,4 +32,4 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
 
 //Items
-Route::get('/items/create', [HomeController::class])->name('post.create');
+Route::get('/items/create', [ItemController::class,'create'])->name('post.create');
