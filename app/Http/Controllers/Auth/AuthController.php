@@ -24,10 +24,10 @@ class AuthController extends Controller
         return Socialite::driver('google')->redirect();
     }
 
-    public function logout(): Response
+    public function logout()
     {
         Auth::logout();
-        return Inertia::render('App');
+        return redirect('logout');
     }
 
     public function googleCallback()
