@@ -646,8 +646,10 @@ module.exports = webpackAsyncContext;
 /******/ 	(() => {
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
+/******/ 			// return url for filenames not based on template
+/******/ 			if ({"resources_js_Pages_App_vue":1,"resources_js_Pages_Dashboard_Index_vue":1,"resources_js_Pages_Home_Index_vue":1,"resources_js_Pages_Items_Create_vue":1,"resources_js_Pages_Profile_Index_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
-/******/ 			return "js/" + chunkId + ".js" + __webpack_require__.h() + "";
+/******/ 			return undefined;
 /******/ 		};
 /******/ 	})();
 /******/ 	
@@ -658,11 +660,6 @@ module.exports = webpackAsyncContext;
 /******/ 			// return url for filenames based on template
 /******/ 			return "" + chunkId + ".css";
 /******/ 		};
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/getFullHash */
-/******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("585aa4c66fc2aae73f8e")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

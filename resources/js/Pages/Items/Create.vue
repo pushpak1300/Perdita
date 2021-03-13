@@ -109,7 +109,7 @@
                                     <label class="block text-sm font-medium text-gray-700">
                                         Item Pictures
                                     </label>
-                                    <FileInput @input="fileHandle" :error="form.errors.itemimage" class="pr-6 pb-8 w-full lg:w-1/2" type="file" accept="image/*" />
+                                    <FileInput @input="fileHandle" :error="form.errors.inputImage" class="pr-6 pb-8 w-full lg:w-1/2" type="file" accept="image/*" />
                                 </div>
                             </div>
                         </div>
@@ -146,7 +146,7 @@ export default {
     },
     methods:{
       fileHandle(event){
-          this.form.itemimage = event;
+          this.form.inputImage = event;
       }
     },
     data() {
@@ -159,7 +159,7 @@ export default {
                 reward: null,
                 location: null,
                 category_id: null,
-                itemimage: null
+                inputImage: null
             })
         }
     },

@@ -17,7 +17,6 @@ mix
   .postCss('resources/css/app.css', 'public/css', [
     require('tailwindcss'),
   ]).js('resources/js/app.js', 'public/js').vue({ version: 3 }).webpackConfig({
-    output: { chunkFilename: 'js/[name].js[hash]' },
     resolve: {
       alias: {
         '@': path.resolve('resources/js'),
