@@ -67,7 +67,7 @@
                                             id="user-menu" aria-haspopup="true">
                                         <span class="sr-only">Open user menu</span>
                                         <img class="h-8 w-8 rounded-full"
-                                             src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80"
+                                             :src="$page.props.auth.user.avatar"
                                              alt="">
                                     </button>
                                 </div>
@@ -119,8 +119,7 @@
                         <div class="max-w-3xl mx-auto px-4 flex items-center sm:px-6">
                             <div class="flex-shrink-0">
                                 <img class="h-10 w-10 rounded-full"
-                                     src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80"
-                                     alt="">
+                                     :src="$page.props.auth.user.avatar">
                             </div>
                             <div class="ml-3">
                                 <div class="text-base font-medium text-gray-800">Chelsea Hagon</div>
