@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers;
 
+use App\Models\Item;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Inertia\Response;
@@ -12,7 +13,9 @@ class HomeController extends Controller
 {
     public function index(): Response
     {
-        return Inertia::render('Home/Index');
+        return Inertia::render('Home/Index',[
+            'items' => Item::all()
+        ]);
     }
 
     public function dashboard(): Response

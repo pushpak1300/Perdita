@@ -26,24 +26,17 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             $this->updateVerifiedUser($user, $input);
         } else {
             $user->forceFill([
-                'name' => $input['name'],
-                'email' => $input['email'],
+                'mobile' => $input['mobile'],
+                'location' => $input['location'],
             ])->save();
         }
     }
 
-    /**
-     * Update the given verified user's profile information.
-     *
-     * @param  mixed  $user
-     * @param  array  $input
-     * @return void
-     */
-    protected function updateVerifiedUser($user, array $input)
+    private function updateVerifiedUser($user, array $input)
     {
         $user->forceFill([
-            'mobile' => $input['name'],
-            'city' => $input['email'],
+            'mobile' => $input['mobile'],
+            'location' => $input['location'],
         ])->save();
     }
 }

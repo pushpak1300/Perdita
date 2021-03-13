@@ -1,11 +1,5 @@
 <template>
     <div
-        x-init="
-      () => document.body.classList.add('overflow-hidden');
-      $watch('open', value => {
-        if (value === true) { document.body.classList.add('overflow-hidden') }
-        else { document.body.classList.remove('overflow-hidden') }
-      });"
         v-if="open"
         class="fixed z-10 inset-0 overflow-y-auto"
     >
@@ -19,22 +13,24 @@
                 leave-active-class="ease-in duration-200"
                 leave-class="opacity-100"
                 leave-to-class="opacity-0"
-                ><div
+            >
+                <div
                     v-if="open"
-                    x-description="Background overlay, show/hide based on modal state."
                     class="fixed inset-0 transition-opacity"
                     aria-hidden="true"
                 >
                     <div
                         class="absolute inset-0 bg-gray-500 opacity-75"
-                    ></div></div
-            ></transition>
+                    ></div>
+                </div
+                >
+            </transition>
 
             <!-- This element is to trick the browser into centering the modal contents. -->
             <span
                 class="hidden sm:inline-block sm:align-middle sm:h-screen"
                 aria-hidden="true"
-                >​</span
+            >​</span
             >
             <transition
                 enter-active-class="ease-out duration-300"
@@ -43,9 +39,9 @@
                 leave-active-class="ease-in duration-200"
                 leave-class="opacity-100 translate-y-0 sm:scale-100"
                 leave-to-class="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-                ><div
+            >
+                <div
                     v-if="open"
-                    x-description="Modal panel, show/hide based on modal state."
                     class="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6"
                     role="dialog"
                     aria-modal="true"
@@ -88,12 +84,13 @@
                             Cancel
                         </button>
                     </div>
-                </div></transition
+                </div>
+            </transition
             >
         </div>
     </div>
 
-    <div class="flex">
+    <div class="flex-row sm:flex">
         <div class="max-w-7xl mx-auto py-3 sm:px-3 lg:px-6">
             <div class="max-w-3xl mx-auto">
                 <div class="bg-white shadow overflow-hidden sm:rounded-lg">
@@ -101,7 +98,8 @@
                         <h3 class="text-lg leading-6 font-medium text-gray-900">
                             Item Details
                         </h3>
-                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-green-100 text-green-800">
+                        <span
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-green-100 text-green-800">
                             Found
                         </span>
                     </div>
@@ -174,7 +172,7 @@
             <div class="flex-1 flex-col p-8">
                 <img
                     class="w-64 h-48 flex-shrink-0 mx-auto bg-black rounded-full"
-                    src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=4&amp;w=256&amp;h=256&amp;q=60"
+                    src=""
                     alt=""
                 />
                 <h3 class="mt-6 text-gray-900 text-sm font-medium">
@@ -194,11 +192,9 @@
                         >
                             <svg
                                 class="w-5 h-5 text-indigo-500"
-                                x-description="Heroicon name: solid/phone"
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 20 20"
                                 fill="indigo"
-                                aria-hidden="true"
                             >
                                 <path
                                     d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"
@@ -219,6 +215,12 @@ import HomeLayout from "../../Shared/HomeLayout";
 export default {
     name: "Index",
     layout: HomeLayout,
+    props: {
+        item: {
+            type: Object,
+            required: true
+        }
+    },
     data: () => ({
         open: false
     })

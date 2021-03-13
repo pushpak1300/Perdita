@@ -62,7 +62,7 @@
                             <!-- Profile dropdown -->
                             <div class="flex-shrink-0 relative ml-5">
                                 <div>
-                                    <button type="button" @click="toggle"
+                                    <button type="button" @click="toggle" v-if="$page.props.auth.user"
                                             class="bg-white rounded-full flex focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                                             id="user-menu" aria-haspopup="true">
                                         <span class="sr-only">Open user menu</span>
@@ -81,13 +81,9 @@
                                          class="origin-top-right absolute z-10 right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 py-1"
                                          role="menu" aria-orientation="vertical" aria-labelledby="user-menu">
 
-                                        <a :href="route('profile')"
+                                        <inertia-link :href="route('logout')" method="post"
                                            class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100"
-                                           role="menuitem">Your Profile</a>
-
-                                        <a :href="route('logout')"
-                                           class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100"
-                                           role="menuitem">Logout</a>
+                                           role="menuitem">Logout</inertia-link>
 
                                     </div>
                                 </transition>
@@ -95,7 +91,7 @@
 
                             <inertia-link :href="route('items.create')"
                                           class="ml-6 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                                Add Item
+                                Add Item Listing
                             </inertia-link>
                         </div>
                     </div>
@@ -108,16 +104,16 @@
                         <inertia-link :href="route('home')" aria-current="page"
                            class="bg-gray-100 text-gray-900 block rounded-md py-2 px-3 text-base font-medium text-gray-900">Home</inertia-link>
 
-                        <inertia-link :href="route('dashboard')" aria-current="false"
+                        <inertia-link v-if="$page.props.auth.user" :href="route('dashboard')" aria-current="false"
                            class="hover:bg-gray-50 block rounded-md py-2 px-3 text-base font-medium text-gray-900">Dashboard</inertia-link>
 
-                        <inertia-link :href="route('profile')" aria-current="false"
+                        <inertia-link v-if="$page.props.auth.user" :href="route('profile')" aria-current="false"
                            class="hover:bg-gray-50 block rounded-md py-2 px-3 text-base font-medium text-gray-900">Profile</inertia-link>
 
                     </div>
                     <div class="border-t border-gray-200 pt-4 pb-3">
                         <div class="max-w-3xl mx-auto px-4 flex items-center sm:px-6">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0" v-if="$page.props.auth.user">
                                 <img class="h-10 w-10 rounded-full"
                                      :src="$page.props.auth.user.avatar">
                             </div>
@@ -150,7 +146,7 @@
                 </nav>
             </header>
 
-            <div class="py-10">
+            <div class="py-5 sm:py-10">
                 <div class="max-w-3xl mx-auto sm:px-6 lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-12 lg:gap-8">
                     <div class="hidden lg:block lg:col-span-3 xl:col-span-2">
                         <nav aria-label="Sidebar" class="sticky top-4 divide-y divide-gray-300">
@@ -170,7 +166,7 @@
                     </span>
                                 </inertia-link>
 
-                                <inertia-link :href="route('dashboard')"
+                                <inertia-link v-if="$page.props.auth.user" :href="route('dashboard')"
                                    class="text-gray-600 hover:bg-gray-50 group flex items-center px-3 py-2 text-sm font-medium rounded-md"
                                    aria-current="false">
                                     <svg
@@ -187,7 +183,7 @@
                     </span>
                                 </inertia-link>
 
-                                <inertia-link :href="route('profile')"
+                                <inertia-link v-if="$page.props.auth.user"  :href="route('profile')"
                                    class="text-gray-600 hover:bg-gray-50 group flex items-center px-3 py-2 text-sm font-medium rounded-md"
                                    aria-current="false">
                                     <svg

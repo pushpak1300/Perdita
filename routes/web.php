@@ -19,12 +19,11 @@ use Inertia\Inertia;
 
 Route::get('/', function () {
     return Inertia::render('App');
-});
+})->name('welcome');
 
 //Auth
 Route::get('/google/redirect', [AuthController::class, 'googleRedirect'])->name('google.redirect');
 Route::get('/google/callback', [AuthController::class, 'googleCallback'])->name('google.callback');
-Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 
 //App
@@ -33,6 +32,6 @@ Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard'
 Route::get('/profile', [HomeController::class, 'profile'])->name('profile')->middleware('auth');
 
 //Items
-Route::get('/items/create', [ItemController::class,'create'])->name('items.create');
-Route::get('/items/show', [ItemController::class,'show'])->name('items.show');
-Route::post('/items', [ItemController::class,'store'])->name('items.store');
+Route::get('/items/create', [ItemController::class, 'create'])->name('items.create')->middleware('auth');
+Route::get('/items/{id}', [ItemController::class, 'show'])->name('items.show');
+Route::post('/items', [ItemController::class, 'store'])->name('items.store');

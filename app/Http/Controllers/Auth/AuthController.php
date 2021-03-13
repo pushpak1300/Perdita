@@ -19,15 +19,9 @@ class AuthController extends Controller
         return Inertia::render('Auth/Login');
     }
 
-    public function googleRedirect(): RedirectResponse
+    public function googleRedirect(): redirectresponse
     {
         return Socialite::driver('google')->redirect();
-    }
-
-    public function logout()
-    {
-        Auth::logout();
-        return redirect('logout');
     }
 
     public function googleCallback()
@@ -41,6 +35,6 @@ class AuthController extends Controller
             'avatar' => $googleUser->getAvatar()
         ]);
         Auth::login($user);
-        return redirect('/');
+        return redirect('home');
     }
 }
