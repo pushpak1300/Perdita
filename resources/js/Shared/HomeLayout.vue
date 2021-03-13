@@ -28,7 +28,7 @@
                                                       clip-rule="evenodd"></path>
                                             </svg>
                                         </div>
-                                        <input id="search" name="search"
+                                        <input id="search" name="search" @input.debounce="handleSearch" v-model="search"
                                                class="block w-full bg-white border border-gray-300 rounded-md py-2 pl-10 pr-3 text-sm placeholder-gray-500 focus:outline-none focus:text-gray-900 focus:placeholder-gray-400 focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                                                placeholder="Search" type="search">
                                     </div>
@@ -82,8 +82,9 @@
                                          role="menu" aria-orientation="vertical" aria-labelledby="user-menu">
 
                                         <inertia-link :href="route('logout')" method="post"
-                                           class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100"
-                                           role="menuitem">Logout</inertia-link>
+                                                      class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100"
+                                                      role="menuitem">Logout
+                                        </inertia-link>
 
                                     </div>
                                 </transition>
@@ -102,13 +103,19 @@
                     <div class="max-w-3xl mx-auto px-2 pt-2 pb-3 space-y-1 sm:px-4">
 
                         <inertia-link :href="route('home')" aria-current="page"
-                           class="bg-gray-100 text-gray-900 block rounded-md py-2 px-3 text-base font-medium text-gray-900">Home</inertia-link>
+                                      class="bg-gray-100 text-gray-900 block rounded-md py-2 px-3 text-base font-medium text-gray-900">
+                            Home
+                        </inertia-link>
 
                         <inertia-link v-if="$page.props.auth.user" :href="route('dashboard')" aria-current="false"
-                           class="hover:bg-gray-50 block rounded-md py-2 px-3 text-base font-medium text-gray-900">Dashboard</inertia-link>
+                                      class="hover:bg-gray-50 block rounded-md py-2 px-3 text-base font-medium text-gray-900">
+                            Dashboard
+                        </inertia-link>
 
                         <inertia-link v-if="$page.props.auth.user" :href="route('profile')" aria-current="false"
-                           class="hover:bg-gray-50 block rounded-md py-2 px-3 text-base font-medium text-gray-900">Profile</inertia-link>
+                                      class="hover:bg-gray-50 block rounded-md py-2 px-3 text-base font-medium text-gray-900">
+                            Profile
+                        </inertia-link>
 
                     </div>
                     <div class="border-t border-gray-200 pt-4 pb-3">
@@ -153,8 +160,8 @@
                             <div class="pb-8 space-y-1">
 
                                 <inertia-link :href="route('home')"
-                                   class="bg-gray-200 text-gray-900 group flex items-center px-3 py-2 text-sm font-medium rounded-md"
-                                   aria-current="page">
+                                              class="bg-gray-200 text-gray-900 group flex items-center px-3 py-2 text-sm font-medium rounded-md"
+                                              aria-current="page">
                                     <svg class="text-gray-500 flex-shrink-0 -ml-1 mr-3 h-6 w-6"
                                          xmlns="http://www.w3.org/2000/svg"
                                          fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -167,8 +174,8 @@
                                 </inertia-link>
 
                                 <inertia-link v-if="$page.props.auth.user" :href="route('dashboard')"
-                                   class="text-gray-600 hover:bg-gray-50 group flex items-center px-3 py-2 text-sm font-medium rounded-md"
-                                   aria-current="false">
+                                              class="text-gray-600 hover:bg-gray-50 group flex items-center px-3 py-2 text-sm font-medium rounded-md"
+                                              aria-current="false">
                                     <svg
                                         class="text-gray-400 group-hover:text-gray-500 flex-shrink-0 -ml-1 mr-3 h-6 w-6"
                                         xmlns="http://www.w3.org/2000/svg"
@@ -183,9 +190,9 @@
                     </span>
                                 </inertia-link>
 
-                                <inertia-link v-if="$page.props.auth.user"  :href="route('profile')"
-                                   class="text-gray-600 hover:bg-gray-50 group flex items-center px-3 py-2 text-sm font-medium rounded-md"
-                                   aria-current="false">
+                                <inertia-link v-if="$page.props.auth.user" :href="route('profile')"
+                                              class="text-gray-600 hover:bg-gray-50 group flex items-center px-3 py-2 text-sm font-medium rounded-md"
+                                              aria-current="false">
                                     <svg
                                         class="text-gray-400 group-hover:text-gray-500 flex-shrink-0 -ml-1 mr-3 h-6 w-6"
                                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -277,13 +284,17 @@ export default {
     components: {Logo},
     data() {
         return {
-            open: false
+            open: false,
+            search: null
         }
     },
     methods: {
         toggle() {
             this.open = !this.open;
-        }
+        },
+        handleSearch: _.debounce(function () {
+            this.$inertia.get(route('search'), {'search': this.search})
+        }, 500)
     }
 }
 </script>

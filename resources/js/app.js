@@ -1,6 +1,7 @@
 import { createApp, h } from 'vue'
 import { app, plugin } from '@inertiajs/inertia-vue3'
 import { InertiaProgress as progress } from '@inertiajs/progress'
+require('./bootstrap')
 
 const el = document.getElementById('app')
 
