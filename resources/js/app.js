@@ -9,7 +9,7 @@ progress.init()
 createApp({
   render: () => h(app, {
     initialPage: JSON.parse(el.dataset.page),
-    resolveComponent: name => import(`./Pages/${name}`).then(m => m.default),
+    resolveComponent: name => require(`./Pages/${name}`).default,
   })
 })
 .mixin({ methods: {
