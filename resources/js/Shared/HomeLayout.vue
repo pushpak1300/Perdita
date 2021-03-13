@@ -1,5 +1,5 @@
 <template>
-    <div style="max-height: 800px;" class="overflow-y-auto">
+    <div class="overflow-y-auto">
         <div class="min-h-screen bg-gray-100">
             <header :class="{'fixed inset-0 z-40 overflow-y-auto': open, '': !open}"
                     class="bg-white shadow-sm lg:static lg:overflow-y-visible">
@@ -8,7 +8,7 @@
                         <div class="flex md:absolute md:left-0 md:inset-y-0 lg:static xl:col-span-2">
                             <div class="flex-shrink-0 flex items-center">
                                 <a href="#">
-                                    <logo class="block h-8 w-auto text-indigo-500"></logo>
+                                    <Logo class="block h-8 w-auto text-indigo-500"/>
                                 </a>
                             </div>
                         </div>
@@ -201,7 +201,7 @@
                     </span>
                                 </a>
 
-                            
+
                             </div>
                             <div class="pt-10">
                                 <p class="px-3 text-xs font-semibold text-gray-500 uppercase tracking-wider"
@@ -248,7 +248,14 @@
                                     <a href="#"
                                        class="group flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
                       <span class="truncate">
-                        Luggage
+                        Talents
+                      </span>
+                                    </a>
+
+                                    <a href="#"
+                                       class="group flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                      <span class="truncate">
+                        Gaming
                       </span>
                                     </a>
 
@@ -256,7 +263,7 @@
                             </div>
                         </nav>
                     </div>
-                    <main class="lg:col-span-9 xl:col-span-9">
+                    <main class="sm:col-span-10 lg:col-span-9">
                         <slot/>
                     </main>
                 </div>
