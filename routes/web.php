@@ -33,5 +33,8 @@ Route::get('/profile', [HomeController::class, 'profile'])->name('profile')->mid
 
 //Items
 Route::get('/items/create', [ItemController::class, 'create'])->name('items.create')->middleware('auth');
-Route::get('/items/{id}', [ItemController::class, 'show'])->name('items.show');
+Route::get('/items/{item}', [ItemController::class, 'show'])->name('items.show');
 Route::post('/items', [ItemController::class, 'store'])->name('items.store');
+
+// Search
+Route::get('/search',[HomeController::class,'index'])->name('search');

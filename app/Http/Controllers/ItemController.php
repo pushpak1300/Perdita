@@ -39,7 +39,7 @@ class ItemController extends Controller
         return Redirect::route('home');
     }
 
-    public function show(Item $item)
+    public function show(Item $item): Response
     {
         return Inertia::render('Items/Show',[
             'item' => $item

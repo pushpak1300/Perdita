@@ -11,9 +11,14 @@ use Inertia\Response;
 
 class HomeController extends Controller
 {
-    public function index(): Response
+    public function index(Request $request): Response
     {
-        return Inertia::render('Home/Index',[
+        if ($request->has('search')) {
+            return Inertia::render('Home/Index', [
+                'items' => Item::search($request->get('search'))->get()
+            ]);
+        }
+        return Inertia::render('Home/Index', [
             'items' => Item::all()
         ]);
     }
@@ -27,4 +32,5 @@ class HomeController extends Controller
     {
         return Inertia::render('Profile/Index');
     }
+
 }
