@@ -11,6 +11,8 @@ class Item extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
+
     public function category(): HasMany
     {
         return $this->hasMany(Category::class);

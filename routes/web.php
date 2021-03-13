@@ -35,4 +35,4 @@ Route::get('/profile', [HomeController::class, 'profile'])->name('profile');
 //Items
 Route::get('/items/create', [ItemController::class,'create'])->name('items.create');
 Route::get('/items/show', [ItemController::class,'show'])->name('items.show');
-
+Route::post('/items', [ItemController::class,'store'])->name('items.store');

@@ -8,7 +8,7 @@
                         <div class="flex md:absolute md:left-0 md:inset-y-0 lg:static xl:col-span-2">
                             <div class="flex-shrink-0 flex items-center">
                                 <a href="#">
-                                    <Logo class="block h-8 w-auto text-indigo-500"/>
+                                    <Logo class="block h-8 font-bold w-auto text-indigo-500"/>
                                 </a>
                             </div>
                         </div>
@@ -275,9 +275,11 @@
 </template>
 
 <script>
+import Logo from "./Logo";
+
 export default {
     name: "HomeLayout",
-    components: ['Logo'],
+    components: {Logo},
     data() {
         return {
             open: false

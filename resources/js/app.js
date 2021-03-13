@@ -1,19 +1,19 @@
 import { createApp, h } from 'vue'
-import { App, plugin } from '@inertiajs/inertia-vue3'
-import { InertiaProgress } from '@inertiajs/progress'
-
-InertiaProgress.init()
-
+import { app, plugin } from '@inertiajs/inertia-vue3'
+import { InertiaProgress as progress } from '@inertiajs/progress'
 
 const el = document.getElementById('app')
 
+progress.init()
+
 createApp({
-  render: () => h(App, {
+  render: () => h(app, {
     initialPage: JSON.parse(el.dataset.page),
-    resolveComponent: name => require(`./Pages/${name}`).default,
+    resolveComponent: name => import(`@/Pages/${name}`).then(m => m.default),
   })
-}).mixin({ methods: {
+})
+.mixin({ methods: {
     route: window.route,
 }})
-    .use(plugin)
-    .mount(el)
+.use(plugin)
+.mount(el)
