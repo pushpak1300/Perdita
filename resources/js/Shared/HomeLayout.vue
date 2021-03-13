@@ -256,7 +256,7 @@
                             </div>
                         </nav>
                     </div>
-                    <main class="lg:col-span-9 xl:col-span-6">
+                    <main class="lg:col-span-9 xl:col-span-9">
                         <slot/>
                     </main>
                 </div>
