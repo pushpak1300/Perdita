@@ -28,3 +28,7 @@ Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 //App
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
+
+//Items
+Route::get('/items/create', [HomeController::class])->name('post.create');

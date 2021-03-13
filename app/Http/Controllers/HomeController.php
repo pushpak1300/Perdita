@@ -14,4 +14,9 @@ class HomeController extends Controller
     {
         return Inertia::render('Home/Index');
     }
+
+     public function dashboard(): Response
+    {
+        return Inertia::render('Dashboard/Index');
+    }
 }
