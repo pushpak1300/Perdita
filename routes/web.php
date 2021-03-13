@@ -25,6 +25,9 @@ Route::get('/', function () {
 Route::get('/google/redirect', [AuthController::class, 'googleRedirect'])->name('google.redirect');
 Route::get('/google/callback', [AuthController::class, 'googleCallback'])->name('google.callback');
 
+//Dashboard
+Route::get('/dashboard/responses/{id}', [HomeController::class, 'response'])->name('response')->middleware('auth');
+Route::get('/dashboard/responses', [HomeController::class, 'responses'])->name('responses')->middleware('auth');
 
 //App
 Route::get('/home', [HomeController::class, 'index'])->name('home');

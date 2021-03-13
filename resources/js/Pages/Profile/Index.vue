@@ -26,10 +26,10 @@
                         <div class="col-span-12 sm:col-span-6">
                             <label for="linked_account" class="block text-sm font-medium text-gray-700">Linked
                                 Accounts</label>
-                            <button type="submit" id="linked_account"
+                            <a id="linked_account"
                                     class="bg-blue-700 mt-2 border border-transparent rounded-md shadow-sm py-2 px-4 inline-flex justify-center text-sm font-medium text-white hover:bg-light-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-light-blue-500">
                                 {{ form.oauth_provider.toUpperCase() }}
-                            </button>
+                            </a>
                         </div>
 
                         <div class="col-span-12 sm:col-span-6">
