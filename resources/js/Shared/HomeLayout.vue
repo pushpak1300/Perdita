@@ -275,9 +275,11 @@
 </template>
 
 <script>
+import Logo from "./Logo";
+
 export default {
     name: "HomeLayout",
-    components: ['Logo'],
+    components: {Logo},
     data() {
         return {
             open: false
