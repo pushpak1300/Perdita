@@ -16498,9 +16498,13 @@ __webpack_require__.r(__webpack_exports__);
   layout: _Shared_HomeLayout__WEBPACK_IMPORTED_MODULE_0__.default,
   setup: function setup() {
     var form = (0,_inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__.useForm)({
-      email: null,
-      password: null,
-      remember: false
+      title: null,
+      description: null,
+      date: null,
+      type: null,
+      reward: null,
+      location: null,
+      category_id: null
     });
     return {
       form: form
@@ -17034,38 +17038,24 @@ var _hoisted_11 = {
 
 var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("This information will be displayed publicly so be careful what you ");
 
-var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
-  "class": "sm:col-span-3"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
-  "for": "country",
-  "class": "block text-sm font-medium text-gray-700"
-}, " Country / Region "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
-  "class": "mt-1"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("select", {
-  id: "country",
-  name: "country",
-  autocomplete: "country",
-  "class": "shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("option", null, "United States"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("option", null, "Canada"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("option", null, "Mexico")])])], -1
-/* HOISTED */
-);
+var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<fieldset class=\"sm:col-span-6 \" data-v-fc3ef218><div data-v-fc3ef218><label class=\"block text-sm font-medium text-gray-700\" data-v-fc3ef218> Item State </label></div><div class=\"mt-4 space-y-4\" data-v-fc3ef218><div class=\"flex items-center mr-4\" data-v-fc3ef218><input id=\"push_everything\" name=\"item_state\" type=\"radio\" class=\"focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300\" data-v-fc3ef218><label for=\"push_everything\" class=\"mx-3 block text-sm font-medium text-gray-700\" data-v-fc3ef218> Lost </label><input id=\"push_email\" name=\"item_state\" type=\"radio\" class=\"focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300\" data-v-fc3ef218><label for=\"push_email\" class=\"mx-3 block text-sm font-medium text-gray-700\" data-v-fc3ef218> Found </label></div></div></fieldset><div class=\"sm:col-span-3\" data-v-fc3ef218><label for=\"city\" class=\"block text-sm font-medium text-gray-700\" data-v-fc3ef218> City / Region </label><div class=\"mt-1\" data-v-fc3ef218><input type=\"text\" name=\"city\" id=\"city\" class=\"shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md\" data-v-fc3ef218></div></div>", 2);
 
-var _hoisted_14 = {
+var _hoisted_15 = {
   "class": "sm:col-span-3"
 };
 
-var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
   "for": "date",
   "class": "block text-sm font-medium text-gray-700"
 }, " Date of Found/Lost Item ", -1
 /* HOISTED */
 );
 
-var _hoisted_16 = {
+var _hoisted_17 = {
   "class": "mt-1"
 };
 
-var _hoisted_17 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+var _hoisted_18 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "sm:col-span-6"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
   "class": "block text-sm font-medium text-gray-700"
@@ -17102,19 +17092,19 @@ var _hoisted_17 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(
 /* HOISTED */
 );
 
-var _hoisted_18 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"pt-8\" data-v-fc3ef218><div data-v-fc3ef218><h3 class=\"text-lg leading-6 font-medium text-gray-900\" data-v-fc3ef218> Personal Information </h3><p class=\"mt-1 text-sm text-gray-500\" data-v-fc3ef218> Use a permanent address where you can receive mail. </p></div><div class=\"mt-6 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6\" data-v-fc3ef218><div class=\"sm:col-span-3\" data-v-fc3ef218><label for=\"first_name\" class=\"block text-sm font-medium text-gray-700\" data-v-fc3ef218> First name </label><div class=\"mt-1\" data-v-fc3ef218><input type=\"text\" name=\"first_name\" id=\"first_name\" autocomplete=\"given-name\" class=\"shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md\" data-v-fc3ef218></div></div><div class=\"sm:col-span-3\" data-v-fc3ef218><label for=\"last_name\" class=\"block text-sm font-medium text-gray-700\" data-v-fc3ef218> Last name </label><div class=\"mt-1\" data-v-fc3ef218><input type=\"text\" name=\"last_name\" id=\"last_name\" autocomplete=\"family-name\" class=\"shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md\" data-v-fc3ef218></div></div><div class=\"sm:col-span-4\" data-v-fc3ef218><label for=\"email\" class=\"block text-sm font-medium text-gray-700\" data-v-fc3ef218> Email address </label><div class=\"mt-1\" data-v-fc3ef218><input id=\"email\" name=\"email\" type=\"email\" autocomplete=\"email\" class=\"shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md\" data-v-fc3ef218></div></div><div class=\"sm:col-span-6\" data-v-fc3ef218><label for=\"street_address\" class=\"block text-sm font-medium text-gray-700\" data-v-fc3ef218> Street address </label><div class=\"mt-1\" data-v-fc3ef218><input type=\"text\" name=\"street_address\" id=\"street_address\" autocomplete=\"street-address\" class=\"shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md\" data-v-fc3ef218></div></div><div class=\"sm:col-span-2\" data-v-fc3ef218><label for=\"city\" class=\"block text-sm font-medium text-gray-700\" data-v-fc3ef218> City </label><div class=\"mt-1\" data-v-fc3ef218><input type=\"text\" name=\"city\" id=\"city\" class=\"shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md\" data-v-fc3ef218></div></div><div class=\"sm:col-span-2\" data-v-fc3ef218><label for=\"state\" class=\"block text-sm font-medium text-gray-700\" data-v-fc3ef218> State / Province </label><div class=\"mt-1\" data-v-fc3ef218><input type=\"text\" name=\"state\" id=\"state\" class=\"shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md\" data-v-fc3ef218></div></div><div class=\"sm:col-span-2\" data-v-fc3ef218><label for=\"zip\" class=\"block text-sm font-medium text-gray-700\" data-v-fc3ef218> ZIP / Postal </label><div class=\"mt-1\" data-v-fc3ef218><input type=\"text\" name=\"zip\" id=\"zip\" autocomplete=\"postal-code\" class=\"shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md\" data-v-fc3ef218></div></div></div></div>", 1);
-
-var _hoisted_19 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+var _hoisted_19 = {
   "class": "pt-5"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+};
+var _hoisted_20 = {
   "class": "flex justify-end"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
-  type: "button",
-  "class": "bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-}, " Cancel "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
+};
+
+var _hoisted_21 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Cancel ");
+
+var _hoisted_22 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
   type: "submit",
   "class": "ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-}, " Save ")])], -1
+}, " Save ", -1
 /* HOISTED */
 );
 
@@ -17123,6 +17113,8 @@ var _hoisted_19 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(
 var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data, $options) {
   var _component_share = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("share");
 
+  var _component_inertia_link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("inertia-link");
+
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("form", {
     "class": "space-y-8 divide-y divide-gray-200",
     onSubmit: _cache[1] || (_cache[1] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function ($event) {
@@ -17130,7 +17122,7 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
     }, ["prevent"]))
   }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [_hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_6, [_hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_8, [_hoisted_9, _hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", _hoisted_11, [_hoisted_12, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_share, {
     "class": ""
-  })])]), _hoisted_13, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_14, [_hoisted_15, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_16, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+  })])]), _hoisted_13, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_15, [_hoisted_16, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_17, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
     type: "date",
     max: new Date(),
     name: "date",
@@ -17139,7 +17131,19 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
     "class": "shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
   }, null, 8
   /* PROPS */
-  , ["max"])])]), _hoisted_17])]), _hoisted_18]), _hoisted_19], 32
+  , ["max"])])]), _hoisted_18])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_19, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_20, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_inertia_link, {
+    href: _ctx.route('home'),
+    "class": "bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+  }, {
+    "default": _withId(function () {
+      return [_hoisted_21];
+    }),
+    _: 1
+    /* STABLE */
+
+  }, 8
+  /* PROPS */
+  , ["href"]), _hoisted_22])])], 32
   /* HYDRATE_EVENTS */
   )])])]);
 });
@@ -17300,12 +17304,7 @@ var _hoisted_17 = {
   "aria-labelledby": "user-menu"
 };
 
-var _hoisted_18 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
-  href: "#",
-  "class": "ml-6 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-}, " New Post ", -1
-/* HOISTED */
-);
+var _hoisted_18 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Add lost/Found Item ");
 
 var _hoisted_19 = {
   "class": "max-w-3xl mx-auto px-2 pt-2 pb-3 space-y-1 sm:px-4"
@@ -17452,6 +17451,8 @@ var _hoisted_36 = {
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_Logo = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Logo");
 
+  var _component_inertia_link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("inertia-link");
+
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("header", {
     "class": [{
       'fixed inset-0 z-40 overflow-y-auto': $data.open,
@@ -17522,7 +17523,19 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     _: 1
     /* STABLE */
 
-  })]), _hoisted_18])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("nav", {
+  })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_inertia_link, {
+    href: _ctx.route('items.create'),
+    "class": "ml-6 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [_hoisted_18];
+    }),
+    _: 1
+    /* STABLE */
+
+  }, 8
+  /* PROPS */
+  , ["href"])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("nav", {
     "class": [{
       'block': $data.open,
       'hidden': !$data.open
