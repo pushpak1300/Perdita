@@ -59,24 +59,10 @@
                             </button>
                         </div>
                         <div class="hidden lg:flex lg:items-center lg:justify-end xl:col-span-4">
-                            <a href="#" class="text-sm font-medium text-gray-900 hover:underline">
-                                Go Premium
-                            </a>
-                            <a href="#"
-                               class="ml-5 flex-shrink-0 bg-white rounded-full p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                                <span class="sr-only">View notifications</span>
-                                <svg class="h-6 w-6"
-                                     xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                     stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                          d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
-                                </svg>
-                            </a>
-
                             <!-- Profile dropdown -->
-                            <div @click.away="open = false" class="flex-shrink-0 relative ml-5">
+                            <div class="flex-shrink-0 relative ml-5">
                                 <div>
-                                    <button type="button" @click="open = !open"
+                                    <button type="button" @click="toggle"
                                             class="bg-white rounded-full flex focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                                             id="user-menu" aria-haspopup="true">
                                         <span class="sr-only">Open user menu</span>
@@ -95,14 +81,11 @@
                                          class="origin-top-right absolute z-10 right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 py-1"
                                          role="menu" aria-orientation="vertical" aria-labelledby="user-menu">
 
-                                        <a href="#" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100"
+                                        <a :href="route('profile')" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100"
                                            role="menuitem">Your Profile</a>
 
-                                        <a href="#" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100"
-                                           role="menuitem">Settings</a>
-
-                                        <a href="#" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100"
-                                           role="menuitem">Sign out</a>
+                                        <a :href="route('logout')" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100"
+                                           role="menuitem">Logout</a>
 
                                     </div>
                                 </transition>
@@ -120,17 +103,14 @@
                      aria-label="Global">
                     <div class="max-w-3xl mx-auto px-2 pt-2 pb-3 space-y-1 sm:px-4">
 
-                        <a href="#" aria-current="page"
+                        <a :href="route('home')" aria-current="page"
                            class="bg-gray-100 text-gray-900 block rounded-md py-2 px-3 text-base font-medium text-gray-900">Home</a>
 
-                        <a href="#" aria-current="false"
-                           class="hover:bg-gray-50 block rounded-md py-2 px-3 text-base font-medium text-gray-900">Popular</a>
+                        <a :href="route('dashboard')" aria-current="false"
+                           class="hover:bg-gray-50 block rounded-md py-2 px-3 text-base font-medium text-gray-900">Dashboard</a>
 
-                        <a href="#" aria-current="false"
-                           class="hover:bg-gray-50 block rounded-md py-2 px-3 text-base font-medium text-gray-900">Communities</a>
-
-                        <a href="#" aria-current="false"
-                           class="hover:bg-gray-50 block rounded-md py-2 px-3 text-base font-medium text-gray-900">Trending</a>
+                        <a :href="route('profile')" aria-current="false"
+                           class="hover:bg-gray-50 block rounded-md py-2 px-3 text-base font-medium text-gray-900">Profile</a>
 
                     </div>
                     <div class="border-t border-gray-200 pt-4 pb-3">
@@ -161,12 +141,8 @@
                                class="block rounded-md py-2 px-3 text-base font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-900">Your
                                 Profile</a>
 
-                            <a href="#"
-                               class="block rounded-md py-2 px-3 text-base font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-900">Settings</a>
-
-                            <a href="#"
-                               class="block rounded-md py-2 px-3 text-base font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-900">Sign
-                                out</a>
+                            <a :href="route('logout')"
+                               class="block rounded-md py-2 px-3 text-base font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-900">Logout</a>
 
                         </div>
                     </div>
@@ -179,7 +155,7 @@
                         <nav aria-label="Sidebar" class="sticky top-4 divide-y divide-gray-300">
                             <div class="pb-8 space-y-1">
 
-                                <a href="#"
+                                <a :href="route('home')"
                                    class="bg-gray-200 text-gray-900 group flex items-center px-3 py-2 text-sm font-medium rounded-md"
                                    aria-current="page">
                                     <svg class="text-gray-500 flex-shrink-0 -ml-1 mr-3 h-6 w-6"
@@ -193,7 +169,7 @@
                     </span>
                                 </a>
 
-                                <a href="#"
+                                <a :href="route('dashboard')"
                                    class="text-gray-600 hover:bg-gray-50 group flex items-center px-3 py-2 text-sm font-medium rounded-md"
                                    aria-current="false">
                                     <svg
@@ -206,11 +182,11 @@
                                               d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z"></path>
                                     </svg>
                                     <span class="truncate">
-                      Popular
+                      Dashboard
                     </span>
                                 </a>
 
-                                <a href="#"
+                                <a :href="route('profile')"
                                    class="text-gray-600 hover:bg-gray-50 group flex items-center px-3 py-2 text-sm font-medium rounded-md"
                                    aria-current="false">
                                     <svg
@@ -221,86 +197,58 @@
                                               d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
                                     </svg>
                                     <span class="truncate">
-                      Communities
+                      Profile
                     </span>
                                 </a>
 
-                                <a href="#"
-                                   class="text-gray-600 hover:bg-gray-50 group flex items-center px-3 py-2 text-sm font-medium rounded-md"
-                                   aria-current="false">
-                                    <svg
-                                        class="text-gray-400 group-hover:text-gray-500 flex-shrink-0 -ml-1 mr-3 h-6 w-6"
-                                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                        stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                              d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
-                                    </svg>
-                                    <span class="truncate">
-                      Trending
-                    </span>
-                                </a>
-
+                            
                             </div>
                             <div class="pt-10">
                                 <p class="px-3 text-xs font-semibold text-gray-500 uppercase tracking-wider"
                                    id="communities-headline">
-                                    My communities
+                                    Search by category
                                 </p>
                                 <div class="mt-3 space-y-2" aria-labelledby="communities-headline">
 
                                     <a href="#"
                                        class="group flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
                       <span class="truncate">
-                        Movies
+                        Electronics
                       </span>
                                     </a>
 
                                     <a href="#"
                                        class="group flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
                       <span class="truncate">
-                        Food
+                        Wallet
                       </span>
                                     </a>
 
                                     <a href="#"
                                        class="group flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
                       <span class="truncate">
-                        Sports
+                        Documents
                       </span>
                                     </a>
 
                                     <a href="#"
                                        class="group flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
                       <span class="truncate">
-                        Animals
+                        Pets
                       </span>
                                     </a>
 
                                     <a href="#"
                                        class="group flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
                       <span class="truncate">
-                        Science
+                        Jewelry & Accessories
                       </span>
                                     </a>
 
                                     <a href="#"
                                        class="group flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
                       <span class="truncate">
-                        Dinosaurs
-                      </span>
-                                    </a>
-
-                                    <a href="#"
-                                       class="group flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
-                      <span class="truncate">
-                        Talents
-                      </span>
-                                    </a>
-
-                                    <a href="#"
-                                       class="group flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
-                      <span class="truncate">
-                        Gaming
+                        Luggage
                       </span>
                                     </a>
 
@@ -324,6 +272,11 @@ export default {
     data() {
         return {
             open: false
+        }
+    },
+    methods: {
+        toggle() {
+            this.open = !this.open;
         }
     }
 }

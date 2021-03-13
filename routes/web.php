@@ -30,6 +30,7 @@ Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 //App
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
+Route::get('/profile', [HomeController::class, 'profile'])->name('profile');
 
 //Items
 Route::get('/items/create', [ItemController::class,'create'])->name('post.create');
