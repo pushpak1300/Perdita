@@ -168,7 +168,7 @@
 </template>
 
 <script>
-import Logo from "@/Shared/Logo";
+import Logo from "../Shared/Logo";
 
 export default {
     name: "App",

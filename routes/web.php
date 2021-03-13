@@ -29,8 +29,8 @@ Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 //App
 Route::get('/home', [HomeController::class, 'index'])->name('home');
-Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
-Route::get('/profile', [HomeController::class, 'profile'])->name('profile');
+Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard')->middleware('auth');
+Route::get('/profile', [HomeController::class, 'profile'])->name('profile')->middleware('auth');
 
 //Items
 Route::get('/items/create', [ItemController::class,'create'])->name('items.create');

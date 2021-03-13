@@ -1,6 +1,4 @@
 const mix = require('laravel-mix');
-const path = require('path')
-
 
 /*
  |--------------------------------------------------------------------------
@@ -14,15 +12,8 @@ const path = require('path')
  */
 
 mix
+  .js('resources/js/app.js', 'public/js')
+  .vue()
   .postCss('resources/css/app.css', 'public/css', [
     require('tailwindcss'),
-  ]).js('resources/js/app.js', 'public/js').vue({ version: 3 }).webpackConfig({
-    resolve: {
-      alias: {
-        '@': path.resolve('resources/js'),
-        vue: path.resolve('node_modules', 'vue'),
-      },
-    },
-  })
-  .version()
-  .sourceMaps()
+  ]).version()

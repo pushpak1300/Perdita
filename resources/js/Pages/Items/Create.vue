@@ -135,8 +135,8 @@
 </template>
 
 <script>
-import HomeLayout from "@/Shared/HomeLayout.vue";
-import FileInput from "@/Shared/FileInput.vue";
+import HomeLayout from "../../Shared/HomeLayout.vue";
+import FileInput from "../../Shared/FileInput.vue";
 
 export default {
     name: "Create",
