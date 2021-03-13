@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\AuthController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -17,3 +18,8 @@ use Inertia\Inertia;
 Route::get('/', function () {
     return Inertia::render('App');
 });
+
+//Auth
+Route::get('/google/redirect', [AuthController::class, 'googleRedirect'])->name('google.redirect');
+Route::get('/google/callback', [AuthController::class, 'googleCallback'])->name('google.callback');
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
