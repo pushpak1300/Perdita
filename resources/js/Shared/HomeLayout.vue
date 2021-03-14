@@ -154,7 +154,7 @@
             </header>
 
             <div class="py-5 sm:py-10">
-                <div class="max-w-3xl mx-auto sm:px-6 lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-12 lg:gap-8">
+                <div class="max-w-3xl mx-auto sm:px-4 sm:max-w-full sm:pl-8 sm:grid sm:grid-cols-12 sm:gap-4">
                     <div class="hidden lg:block lg:col-span-3 xl:col-span-2">
                         <nav aria-label="Sidebar" class="sticky top-4 divide-y divide-gray-300">
                             <div class="pb-8 space-y-1">

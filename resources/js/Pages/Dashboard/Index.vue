@@ -83,9 +83,11 @@
                                         <dt class="sr-only">Role</dt>
                                         <dd class="mt-3">
                             <span
-                                class="px-2 py-1 text-green-800 text-xs font-medium bg-green-100 rounded-full" v-if="item.type === 'found'">Found</span>
+                                class="px-2 py-1 text-green-800 text-xs font-medium bg-green-100 rounded-full"
+                                v-if="item.type === 'found'">Found</span>
                                             <span
-                                class="px-2 py-1 text-green-800 text-xs font-medium bg-red-100 rounded-full" v-else>Lost</span>
+                                                class="px-2 py-1 text-green-800 text-xs font-medium bg-red-100 rounded-full"
+                                                v-else>Lost</span>
                                         </dd>
                                     </dl>
                                 </div>
@@ -93,13 +95,14 @@
                                     <div class="-mt-px flex divide-x divide-gray-400 bg-white">
                                         <div class="w-0 flex-1 flex">
                                             <inertia-link :href="route('items.show',item.id)"
-                                            class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border border-gray-200 mt-2 rounded-bl-lg hover:text-gray-500">
+                                                          class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border border-gray-200 mt-2 rounded-bl-lg hover:text-gray-500">
                                                 <span class="ml-3">View Status </span>
-                                                <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
-                                                    fill="currentColor">
+                                                <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg"
+                                                     viewBox="0 0 20 20"
+                                                     fill="currentColor">
                                                     <path fill-rule="evenodd"
-                                                        d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                                                        clip-rule="evenodd"/>
+                                                          d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                                                          clip-rule="evenodd"/>
                                                 </svg>
                                             </inertia-link>
                                         </div>
@@ -133,9 +136,11 @@
                                         <dt class="sr-only">Role</dt>
                                         <dd class="mt-3">
                             <span
-                                class="px-2 py-1 text-green-800 text-xs font-medium bg-green-100 rounded-full" v-if="item.type === 'found'">Found</span>
+                                class="px-2 py-1 text-green-800 text-xs font-medium bg-green-100 rounded-full"
+                                v-if="item.type === 'found'">Found</span>
                                             <span
-                                class="px-2 py-1 text-green-800 text-xs font-medium bg-red-100 rounded-full" v-else>Lost</span>
+                                                class="px-2 py-1 text-green-800 text-xs font-medium bg-red-100 rounded-full"
+                                                v-else>Lost</span>
                                         </dd>
                                     </dl>
                                 </div>
@@ -143,13 +148,14 @@
                                     <div class="-mt-px flex divide-x divide-gray-400 bg-white">
                                         <div class="w-0 flex-1 flex">
                                             <inertia-link :href="route('responses')"
-                                            class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border border-gray-200 mt-2 rounded-bl-lg hover:text-gray-500">
+                                                          class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border border-gray-200 mt-2 rounded-bl-lg hover:text-gray-500">
                                                 <span class="ml-3">View Responses </span>
-                                                <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
-                                                    fill="currentColor">
+                                                <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg"
+                                                     viewBox="0 0 20 20"
+                                                     fill="currentColor">
                                                     <path fill-rule="evenodd"
-                                                        d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                                                        clip-rule="evenodd"/>
+                                                          d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                                                          clip-rule="evenodd"/>
                                                 </svg>
                                             </inertia-link>
                                         </div>
@@ -170,123 +176,21 @@ import HomeLayout from "../../Shared/HomeLayout";
 export default {
     name: "Index",
     layout: HomeLayout,
-    data: () => ({
-        claims: [
-            {
-                id: "dai121",
-                category: {
-                    id: 2,
-                    text: "Jewellwry"
-                },
-                category_id: 2,
-                title: "Diamond Ring",
-                type: "lost",
-                location: "Mumbai"
-            },
-            {
-                id: "dai122",
-                category: {
-                    id: 2,
-                    text: "Jewellwry"
-                },
-                category_id: 2,
-                title: "Silver earrings",
-                type: "found",
-                location: "Pune"
-            },
-            {
-                id: "dai121",
-                category: {
-                    id: 2,
-                    text: "Jewellwry"
-                },
-                category_id: 2,
-                title: "Diamond Ring",
-                type: "lost",
-                location: "Mumbai"
-            },
-            {
-                id: "dai122",
-                category: {
-                    id: 2,
-                    text: "Jewellwry"
-                },
-                category_id: 2,
-                title: "Silver earrings",
-                type: "found",
-                location: "Pune"
-            }
-        ],
-        items: [
-            {
-                id: "dai121",
-                category: {
-                    id: 2,
-                    text: "Jewellwry"
-                },
-                category_id: 2,
-                title: "Diamond Ring",
-                type: "lost",
-                location: "Mumbai"
-            },
-            {
-                id: "dai122",
-                category: {
-                    id: 2,
-                    text: "Jewellwry"
-                },
-                category_id: 2,
-                title: "Silver earrings",
-                type: "found",
-                location: "Pune"
-            },
-            {
-                id: "dai121",
-                category: {
-                    id: 2,
-                    text: "Jewellwry"
-                },
-                category_id: 2,
-                title: "Diamond Ring",
-                type: "lost",
-                location: "Mumbai"
-            },
-            {
-                id: "dai122",
-                category: {
-                    id: 2,
-                    text: "Jewellwry"
-                },
-                category_id: 2,
-                title: "Silver earrings",
-                type: "found",
-                location: "Pune"
-            },
-            {
-                id: "dai122",
-                category: {
-                    id: 2,
-                    text: "Jewellwry"
-                },
-                category_id: 2,
-                title: "Silver earrings",
-                type: "found",
-                location: "Pune"
-            },
-            {
-                id: "dai121",
-                category: {
-                    id: 2,
-                    text: "Jewellwry"
-                },
-                category_id: 2,
-                title: "Diamond Ring",
-                type: "lost",
-                location: "Mumbai"
-            },
-        ]
-    })
-};
+    props: {
+        itemClaims: {
+            type: Object
+        },
+        itemPosted: {
+            type: Object
+        }
+    },
+    data() {
+        return {
+            claims: this.itemClaims,
+            items: this.itemPosted
+        }
+    }
+}
 </script>
 
 <style scoped></style>

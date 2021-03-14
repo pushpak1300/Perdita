@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Communication;
 use App\Models\Item;
 use Auth;
 use Illuminate\Http\Request;
@@ -51,9 +52,15 @@ class ItemController extends Controller
         //
     }
 
-    public function update(Request $request, Item $item)
+    public function communicationStore(Request $request, Item $item)
     {
-        //
+        $communication = Communication::create([
+            'description' => $request->get('description'),
+            'item_id' => $item->id,
+            'sender_id' => Auth::id()
+        ]);
+        $communication->addMediaFromRequest('proof')->toMediaCollection();
+        return redirect()->route('dashboard');
     }
 
     public function destroy(Item $item)

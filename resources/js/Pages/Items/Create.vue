@@ -2,7 +2,7 @@
     <div class="bg-white ml-5">
         <div class="max-w-full mx-auto py-12 px-4 sm:px-6 lg:px-8">
             <div class="max-w-full mx-auto">
-                <form class="space-y-8 divide-y divide-gray-200" @submit.prevent="form.post('/items ')">
+                <form class="space-y-8 divide-y divide-gray-200" @submit.prevent="form.post('/items')">
                     <div class="space-y-8 divide-y divide-gray-200">
                         <div>
                             <div>
