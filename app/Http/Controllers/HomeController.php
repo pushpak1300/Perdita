@@ -32,7 +32,7 @@ class HomeController extends Controller
             'itemClaims' => Item::whereHas('communications', function (Builder $query) {
                 $query->where('sender_id', Auth::id());
             })->get(),
-            'itemPosted' => Auth::user()->items(),
+            'itemPosted' => Auth::user()->items,
             ]);
     }
 

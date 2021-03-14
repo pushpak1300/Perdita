@@ -13,10 +13,17 @@ class Communication extends Model implements HasMedia
     use HasFactory;
     use InteractsWithMedia;
 
-    protected $guarded=[];
+    protected $guarded = [];
+
+    protected $with = ['item', 'sender'];
 
     public function item(): BelongsTo
     {
         return $this->belongsTo(Item::class);
+    }
+
+    public function sender(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'sender_id');
     }
 }

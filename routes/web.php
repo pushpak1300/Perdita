@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\CommunicationController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ItemController;
 use Illuminate\Support\Facades\Route;
@@ -26,7 +27,6 @@ Route::get('/google/redirect', [AuthController::class, 'googleRedirect'])->name(
 Route::get('/google/callback', [AuthController::class, 'googleCallback'])->name('google.callback');
 
 //Dashboard
-Route::get('/dashboard/responses/{id}', [HomeController::class, 'response'])->name('response')->middleware('auth');
 Route::get('/dashboard/responses', [HomeController::class, 'responses'])->name('responses')->middleware('auth');
 
 //App
@@ -40,5 +40,8 @@ Route::get('/items/{item}', [ItemController::class, 'show'])->name('items.show')
 Route::post('/items', [ItemController::class, 'store'])->name('items.store');
 
 Route::post('/items/{item}/communication',[ItemController::class,'communicationStore'])->name('communication.share');
+Route::get('/items/{item}/communication',[ItemController::class,'communicationIndex'])->name('communication.index');
+
+Route::get('communication/{communication}',[CommunicationController::class,'show'])->name('communication.show');
 // Search
 Route::get('/search',[HomeController::class,'index'])->name('search');

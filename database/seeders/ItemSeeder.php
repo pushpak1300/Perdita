@@ -13,6 +13,6 @@ class ItemSeeder extends Seeder
      */
     public function run()
     {
-        //
+
     }
 }

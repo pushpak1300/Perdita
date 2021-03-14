@@ -16,7 +16,7 @@ class CreateCommunicationsTable extends Migration
         Schema::create('communications', function (Blueprint $table) {
             $table->id();
             $table->string('description');
-            $table->dateTime('accepted_at')->nullable();
+            $table->string('status')->nullable();
             $table->foreignId('sender_id')->references('id')->on('users');
             $table->foreignId('item_id')->references('id')->on('items');
             $table->softDeletes();

@@ -5,15 +5,15 @@
         </h3>
     </div>
     <div class="bg-white shadow overflow-hidden sm:rounded-md mt-4">
-        <ul class="divide-y divide-gray-200">
+        <ul class="divide-y divide-gray-200" v-if="responses">
             <li v-for="response in responses" :key="response.id">
-                <inertia-link :href="route('response', response.id)" class="block hover:bg-gray-50">
+                <inertia-link :href="route('communication.show', response.id)" class="block hover:bg-gray-50">
                     <div class="flex items-center px-4 py-4 sm:px-6">
                         <div class="min-w-0 flex-1 flex items-center">
                             <div class="flex-shrink-0">
                                 <img
                                     class="h-12 w-12 rounded-full"
-                                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80"
+                                    :src="response.sender.avatar"
                                     alt=""
                                 />
                             </div>
@@ -24,18 +24,16 @@
                                     <p
                                         class="text-sm font-medium text-indigo-600 truncate"
                                     >
-                                        {{ response.name }}
+                                        {{ response.sender.name }}
                                     </p>
                                     <p
                                         class="mt-2 flex items-center text-sm text-gray-500"
                                     >
                                         <svg
                                             class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400"
-                                            x-description="Heroicon name: solid/mail"
                                             xmlns="http://www.w3.org/2000/svg"
                                             viewBox="0 0 20 20"
                                             fill="currentColor"
-                                            aria-hidden="true"
                                         >
                                             <path
                                                 d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"
@@ -45,7 +43,7 @@
                                             ></path>
                                         </svg>
                                         <span class="truncate"
-                                            >{{ response.email }}</span
+                                        >{{ response.sender.email }}</span
                                         >
                                     </p>
                                 </div>
@@ -53,10 +51,9 @@
                                     <div>
                                         <p class="text-sm text-gray-900">
                                             Claimed on
-                                            <!-- space -->
-                                            <time datetime="2020-01-07"
-                                                >{{ response.claimed }}</time
-                                            >
+                                            <datetime format="DD-MM-YYYY"
+                                            >{{ response.created_at }}
+                                            </datetime>
                                         </p>
                                     </div>
                                 </div>
@@ -65,11 +62,8 @@
                         <div>
                             <svg
                                 class="h-5 w-5 text-gray-400"
-                                x-description="Heroicon name: solid/chevron-right"
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 20 20"
-                                fill="currentColor"
-                                aria-hidden="true"
                             >
                                 <path
                                     fill-rule="evenodd"
@@ -82,6 +76,11 @@
                 </inertia-link>
             </li>
         </ul>
+        <div class="text-center" v-else>
+            <h2 class="text-center p-4 text-xl text-indigo-500 font-bold">No Reponses
+            </h2>
+
+        </div>
     </div>
 </template>
 
@@ -91,35 +90,15 @@ import HomeLayout from "../../Shared/HomeLayout";
 export default {
     name: "Responses",
     layout: HomeLayout,
-    data: () => ({
-        responses: [
-            {
-                id: "da122ss",
-                name: "Ethan Palani",
-                email: "ethanpalani@gmail.com",
-                claimed: "January 7, 2020"
-            },
-            {
-                id: "da122s2",
-                name: "Pushpak Chajed",
-                email: "pushpopcj@gmail.com",
-                claimed: "February 17, 2020"
-            },
-            {
-                id: "da122s3",
-                name: "Chinmay Gawde",
-                email: "cgawde@gmail.com",
-                claimed: "March 12, 2020"
-            },
-            {
-                id: "da122s4",
-                name: "Jeswin Thomas",
-                email: "jt99eswin@gmail.com",
-                claimed: "January 29, 2020"
-            },
-        ]
-    })
+    props: {
+        responses: {
+            type: Object
+        }
+    },
+    data() {
+        return {
+            responses: this.responses
+        }
+    },
 };
 </script>
-
-<style scoped></style>

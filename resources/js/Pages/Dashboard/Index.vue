@@ -147,7 +147,7 @@
                                 <div>
                                     <div class="-mt-px flex divide-x divide-gray-400 bg-white">
                                         <div class="w-0 flex-1 flex">
-                                            <inertia-link :href="route('responses')"
+                                            <inertia-link :href="route('communication.index',item.id)"
                                                           class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border border-gray-200 mt-2 rounded-bl-lg hover:text-gray-500">
                                                 <span class="ml-3">View Responses </span>
                                                 <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg"

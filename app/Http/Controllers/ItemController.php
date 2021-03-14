@@ -63,6 +63,13 @@ class ItemController extends Controller
         return redirect()->route('dashboard');
     }
 
+    public function communicationIndex(Item $item)
+    {
+        return Inertia::render('Dashboard/Responses',[
+            'responses' => $item->communications
+        ]);
+    }
+
     public function destroy(Item $item)
     {
         //
