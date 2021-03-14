@@ -19,7 +19,7 @@
                                 <div
                                     class="flex items-baseline text-2xl font-semibold text-indigo-600"
                                 >
-                                    6
+                                    {{ itemPosted.length }}
                                 </div>
                             </dd>
                         </div>
@@ -36,7 +36,7 @@
                                 <div
                                     class="flex items-baseline text-2xl font-semibold text-indigo-600"
                                 >
-                                    2
+                                    0
                                 </div>
                             </dd>
                         </div>
@@ -53,7 +53,7 @@
                                 <div
                                     class="flex items-baseline text-2xl font-semibold text-indigo-600"
                                 >
-                                    4
+                                    {{ itemClaims.length }}
                                 </div>
                             </dd>
                         </div>
@@ -66,7 +66,7 @@
                     <h3 class="text-lg leading-6 font-medium text-gray-900">
                         Claims
                     </h3>
-                    <div class="flex flex-wrap -m-4 mt-3">
+                    <div v-if="itemClaims.length > 0" class="flex flex-wrap -m-4 mt-3">
                         <div v-for="item in claims" :key="item.id" class="lg:w-1/4 md:w-1/2 p-4 w-full">
                             <div
                                 class="col-span-1 flex flex-col text-center bg-white rounded-lg shadow divide-y divide-gray-200">
@@ -111,6 +111,11 @@
                             </div>
                         </div>
                     </div>
+                    <div v-else>
+                        <h4 class="text-lg leading-6 font-medium text-gray-500 mt-3 pl-2">
+                            No items claimed yet.
+                        </h4>
+                    </div>
                 </div>
             </div>
 
@@ -119,7 +124,7 @@
                     <h3 class="text-lg leading-6 font-medium text-gray-900">
                         Items Posted
                     </h3>
-                    <div class="flex flex-wrap -m-4 mt-3">
+                    <div v-if="itemPosted.length > 0" class="flex flex-wrap -m-4 mt-3">
                         <div v-for="item in items" :key="item.id" class="lg:w-1/4 md:w-1/2 p-4 w-full">
                             <div
                                 class="col-span-1 flex flex-col text-center bg-white rounded-lg shadow divide-y divide-gray-200">
@@ -163,6 +168,11 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div v-else>
+                        <h4 class="text-lg leading-6 font-medium text-gray-500 mt-3 pl-2">
+                            No items posted yet.
+                        </h4>
                     </div>
                 </div>
             </div>

@@ -33,7 +33,7 @@
         </div>
         <div class="text-gray-600 body-font">
             <div class="container px-4 py-10 mx-auto">
-                <div class="flex flex-wrap -m-4">
+                <div v-if="items.length > 0" class="flex flex-wrap -m-4">
                     <div v-for="item in items" :key="item.id" class="lg:w-1/4 md:w-1/2 p-4 w-full">
                         <div
                             class="col-span-1 flex flex-col text-center bg-white rounded-lg shadow divide-y divide-gray-200">
@@ -74,6 +74,11 @@
                             </div>
                         </div>
                     </div>
+                </div>
+                <div v-else>
+                    <h3 class="text-lg leading-6 font-medium text-gray-900">
+                        No items found.
+                    </h3>
                 </div>
             </div>
         </div>

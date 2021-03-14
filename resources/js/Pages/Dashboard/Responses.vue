@@ -5,7 +5,7 @@
         </h3>
     </div>
     <div class="bg-white shadow overflow-hidden sm:rounded-md mt-4">
-        <ul class="divide-y divide-gray-200" v-if="responses">
+        <ul v-if="responses.length > 0" class="divide-y divide-gray-200">
             <li v-for="response in responses" :key="response.id">
                 <inertia-link :href="route('communication.show', response.id)" class="block hover:bg-gray-50">
                     <div class="flex items-center px-4 py-4 sm:px-6">
@@ -76,10 +76,10 @@
                 </inertia-link>
             </li>
         </ul>
-        <div class="text-center" v-else>
-            <h2 class="text-center p-4 text-xl text-indigo-500 font-bold">No Reponses
-            </h2>
-
+        <div v-else class="text-center">
+            <h4 class="text-center p-4 text-xl text-gray-500 font-medium">
+                No Reponses yet.
+            </h4>
         </div>
     </div>
 </template>

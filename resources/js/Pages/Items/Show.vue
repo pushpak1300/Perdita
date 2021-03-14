@@ -63,7 +63,7 @@
                                             <textarea id="about" name="about" rows="3"
                                                       v-model="form.description"  required
                                                       class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border-gray-300 rounded-md"
-                                                      placeholder="you@example.com"></textarea>
+                                                      placeholder="Explain when, where and how did you lose/find this item"></textarea>
                                         </div>
                                         <p class="mt-2 text-sm text-gray-500">
                                             Add proofs by which you can show that items belongs to you.
