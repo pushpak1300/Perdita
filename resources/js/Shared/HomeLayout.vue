@@ -214,7 +214,7 @@
                                 </p>
                                 <div class="mt-3 space-y-2" aria-labelledby="communities-headline">
 
-                                    <a href="#" @click="document.getElementById('search').innerHTML = 'electronics'"
+                                    <a href="#"
                                        class="group flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
                       <span class="truncate">
                         Electronics
